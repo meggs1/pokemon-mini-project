@@ -19,7 +19,7 @@ class TypesController < ApplicationController
             @type.save
             redirect_to type_path(@type)
         else
-            render :new
+            redirect_to new_view_path
         end
     end
 
@@ -34,7 +34,7 @@ class TypesController < ApplicationController
         if @type.save
             redirect_to type_path(@type)
         else
-            render :edit
+            redirect_to edit_view_path
         end
     end
 

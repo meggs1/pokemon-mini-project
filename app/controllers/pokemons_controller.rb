@@ -18,7 +18,7 @@ class PokemonsController < ApplicationController
         if @pokemon.save
             redirect_to pokemon_path(@pokemon)
         else
-            render :new
+            redirect_to new_pokemon_path
         end
     end
 
@@ -30,10 +30,10 @@ class PokemonsController < ApplicationController
     def update
         find_pokemon
         @pokemon.update(pokemon_params)
-        if @pokemon.save
+        if @pokemon.valid?
             redirect_to pokemon_path(@pokemon)
         else
-            render :edit
+            redirect_to edit_pokemon_path
         end
     end
 
@@ -55,5 +55,5 @@ class PokemonsController < ApplicationController
     def find_pokemon
         @pokemon = Pokemon.find_by(id: params[:id])
     end
-    
+
 end
