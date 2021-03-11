@@ -1,0 +1,9 @@
+<h1>Create a New Type of Pokemon</h1>
+<%= form_for(@type) do |f| %>
+  <%= f.label "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label "Pokemon:" %>
+  <%= f.collection_check_boxes :pokemon_ids, @pokemons, :id , :name %>
+
+  <%= f.submit %>
+<% end %>

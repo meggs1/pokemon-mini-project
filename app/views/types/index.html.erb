@@ -1,0 +1,8 @@
+<h1>Types of Pokemon: </h1>
+
+<%@types.each do |type| %>
+    <li><%= link_to type.name, type %></li>
+<%end%>
+
+<%= link_to "Make a New Type", new_type_path %>
+<%= link_to "View Pokemon", pokemons_path %>

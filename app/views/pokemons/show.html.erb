@@ -1,0 +1,8 @@
+<h1><%= @pokemon.name %></h1>
+
+<% @pokemon.types.each do |type| %>
+    <p><%= link_to type.name, type %></p>
+<%end%>
+
+<%= link_to "Edit Pokemon", edit_pokemon_path(@pokemon) %>
+<%= link_to "Delete Pokemon", @pokemon, method: "delete"%>

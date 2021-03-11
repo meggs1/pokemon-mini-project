@@ -1,0 +1,10 @@
+<h1>Edit <%=@pokemon.name %></h1>
+
+<%= form_for(@pokemon) do |f| %>
+  <%= f.label "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label "Type:" %>
+  <%= f.collection_check_boxes :type_ids, @types, :id , :name %>
+
+  <%= f.submit %>
+<% end %>
